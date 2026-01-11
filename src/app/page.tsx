@@ -1,3 +1,4 @@
+import { getRankings } from "@/features/top/api/getRankings"
 import { Header } from "@/features/top/components/header"
 import { HeroSection } from "@/features/top/components/hero-section"
 import { FeaturesSection } from "@/features/top/components/features-section"
@@ -7,7 +8,12 @@ import { RankingSection } from "@/features/top/components/ranking-section"
 import { RecommendedSection } from "@/features/top/components/recommended-section"
 import { Footer } from "@/features/top/components/footer"
 
-export default function Home() {
+export default async function Home() {
+  const [averageRankings, thirtyAverageRankings] = await Promise.all([
+    getRankings("average"),
+    getRankings("30-average"),
+  ])
+
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -15,8 +21,17 @@ export default function Home() {
       <FeaturesSection />
       <PickupSection />
       <InternSection />
-      <RankingSection title="平均年収ランキング" linkText="平均年収ランキングを見る" />
-      <RankingSection title="30歳平均年収ランキング" linkText="30歳平均年収ランキングを見る" showPopup />
+      <RankingSection
+        title="平均年収ランキング"
+        linkText="平均年収ランキングを見る"
+        rankings={averageRankings}
+      />
+      <RankingSection
+        title="30歳平均年収ランキング"
+        linkText="30歳平均年収ランキングを見る"
+        showPopup
+        rankings={thirtyAverageRankings}
+      />
       <RecommendedSection />
       <Footer />
     </main>

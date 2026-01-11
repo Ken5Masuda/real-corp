@@ -6,21 +6,16 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 
+import { Ranking } from "../../types"
+
 interface RankingSectionProps {
   title: string
   linkText: string
   showPopup?: boolean
+  rankings: Ranking[]
 }
 
-const rankings = [
-  { rank: 1, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
-  { rank: 2, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
-  { rank: 3, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
-  { rank: 4, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
-  { rank: 5, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
-]
-
-export function RankingSection({ title, linkText, showPopup }: RankingSectionProps) {
+export function RankingSection({ title, linkText, showPopup, rankings }: RankingSectionProps) {
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = 5
 
@@ -58,7 +53,7 @@ export function RankingSection({ title, linkText, showPopup }: RankingSectionPro
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {rankings.map((item) => (
-            <RankingCard key={item.rank} {...item} />
+            <RankingCard key={item.id} {...item} />
           ))}
         </div>
 
@@ -77,12 +72,7 @@ function RankingCard({
   name,
   salary,
   rating,
-}: {
-  rank: number
-  name: string
-  salary: string
-  rating: number
-}) {
+}: Ranking) {
   const getRankColor = (rank: number) => {
     if (rank === 1) return "bg-yellow-500"
     if (rank === 2) return "bg-gray-400"
@@ -105,7 +95,9 @@ function RankingCard({
         <h3 className="font-bold text-sm text-foreground mb-1">{name}</h3>
         <div className="flex items-center gap-1 mb-2">
           <span className="text-xs text-muted-foreground">30歳の推定年...</span>
-          <span className="font-bold text-primary">{salary}</span>
+          <span className="font-bold text-primary">
+            {(salary / 10000).toLocaleString()}
+          </span>
           <span className="text-xs text-muted-foreground">万円</span>
         </div>
         <div className="flex items-center gap-1 mb-2">

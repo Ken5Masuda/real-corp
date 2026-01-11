@@ -1,0 +1,11 @@
+id,rank,name,salary,rating,group
+1,1,会社A,8000000,4.5,average
+2,2,会社B,7500000,4.2,average
+3,3,会社C,7000000,4.0,average
+4,4,会社D,6500000,3.8,average
+5,5,会社E,6000000,3.5,average
+6,1,会社F,9000000,4.8,30-average
+7,2,会社G,8500000,4.7,30-average
+8,3,会社H,8000000,4.6,30-average
+9,4,会社I,7800000,4.3,30-average
+10,5,会社J,7200000,4.0,30-average
