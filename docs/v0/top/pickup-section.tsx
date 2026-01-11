@@ -1,21 +1,41 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { CompanyCard } from "@/components/company-card"
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CompanyCard } from "@/components/company-card";
 
 const companies = [
-  { name: "AlphaSights", growth: "CAGR(年平均成長率): 70%...", tags: ["面接あり", "面談あり", "お小りく"] },
-  { name: "AlphaSights", growth: "CAGR(年平均成長率): 70%...", tags: ["面接あり", "面談あり", "お小りく"] },
-  { name: "AlphaSights", growth: "CAGR(年平均成長率): 70%...", tags: ["面接あり", "面談あり", "お小りく"] },
-  { name: "AlphaSights", growth: "CAGR(年平均成長率): 70%...", tags: ["面接あり", "面談あり", "お小りく"] },
-  { name: "AlphaSights", growth: "CAGR(年平均成長率): 70%...", tags: ["面接あり", "面談あり", "お小りく"] },
-]
+  {
+    name: "AlphaSights",
+    growth: "CAGR(年平均成長率): 70%...",
+    tags: ["面接あり", "面談あり", "お小りく"],
+  },
+  {
+    name: "AlphaSights",
+    growth: "CAGR(年平均成長率): 70%...",
+    tags: ["面接あり", "面談あり", "お小りく"],
+  },
+  {
+    name: "AlphaSights",
+    growth: "CAGR(年平均成長率): 70%...",
+    tags: ["面接あり", "面談あり", "お小りく"],
+  },
+  {
+    name: "AlphaSights",
+    growth: "CAGR(年平均成長率): 70%...",
+    tags: ["面接あり", "面談あり", "お小りく"],
+  },
+  {
+    name: "AlphaSights",
+    growth: "CAGR(年平均成長率): 70%...",
+    tags: ["面接あり", "面談あり", "お小りく"],
+  },
+];
 
 export function PickupSection() {
-  const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = 5
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 5;
 
   return (
     <section className="py-12 bg-background">
@@ -28,7 +48,8 @@ export function PickupSection() {
 
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">
-              {String(currentPage).padStart(2, "0")} / {String(totalPages).padStart(2, "0")}
+              {String(currentPage).padStart(2, "0")} /{" "}
+              {String(totalPages).padStart(2, "0")}
             </span>
             <Button
               variant="outline"
@@ -56,5 +77,5 @@ export function PickupSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

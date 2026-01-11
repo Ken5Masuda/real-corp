@@ -14,17 +14,20 @@ This is a starter template for Next.js App Router with Supabase authentication a
 ## Getting Started
 
 1. Copy the example environment file:
+
    ```bash
    cp .env.local.example .env.local
    ```
 
 2. Update `.env.local` with your Supabase credentials:
+
    ```
    NEXT_PUBLIC_SUPABASE_URL=your-project-url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
    ```
 
 3. Install dependencies:
+
    ```bash
    npm install
    ```

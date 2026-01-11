@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import Image from "next/image"
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 interface RankingSectionProps {
-  title: string
-  linkText: string
-  showPopup?: boolean
+  title: string;
+  linkText: string;
+  showPopup?: boolean;
 }
 
 const rankings = [
@@ -18,11 +18,15 @@ const rankings = [
   { rank: 3, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
   { rank: 4, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
   { rank: 5, name: "BofA証券株式会社", salary: "2,219", rating: 4.0 },
-]
+];
 
-export function RankingSection({ title, linkText, showPopup }: RankingSectionProps) {
-  const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = 5
+export function RankingSection({
+  title,
+  linkText,
+  showPopup,
+}: RankingSectionProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 5;
 
   return (
     <section className="py-12 bg-background relative">
@@ -37,7 +41,10 @@ export function RankingSection({ title, linkText, showPopup }: RankingSectionPro
                 <p className="text-xs text-primary font-medium">PICKUP</p>
                 <p className="text-sm font-bold">30歳平均年収ランキングが</p>
                 <p className="text-sm font-bold">大事な理由とは？</p>
-                <Button size="sm" className="mt-2 text-xs bg-primary hover:bg-primary/90">
+                <Button
+                  size="sm"
+                  className="mt-2 text-xs bg-primary hover:bg-primary/90"
+                >
                   確認する →
                 </Button>
               </div>
@@ -46,7 +53,8 @@ export function RankingSection({ title, linkText, showPopup }: RankingSectionPro
 
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">
-              {String(currentPage).padStart(2, "0")} / {String(totalPages).padStart(2, "0")}
+              {String(currentPage).padStart(2, "0")} /{" "}
+              {String(totalPages).padStart(2, "0")}
             </span>
             <Button
               variant="outline"
@@ -74,13 +82,16 @@ export function RankingSection({ title, linkText, showPopup }: RankingSectionPro
         </div>
 
         <div className="flex justify-center mt-8">
-          <Button variant="outline" className="rounded-full px-8 bg-transparent">
+          <Button
+            variant="outline"
+            className="rounded-full px-8 bg-transparent"
+          >
             {linkText} →
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function RankingCard({
@@ -89,17 +100,17 @@ function RankingCard({
   salary,
   rating,
 }: {
-  rank: number
-  name: string
-  salary: string
-  rating: number
+  rank: number;
+  name: string;
+  salary: string;
+  rating: number;
 }) {
   const getRankColor = (rank: number) => {
-    if (rank === 1) return "bg-yellow-500"
-    if (rank === 2) return "bg-gray-400"
-    if (rank === 3) return "bg-amber-600"
-    return "bg-muted"
-  }
+    if (rank === 1) return "bg-yellow-500";
+    if (rank === 2) return "bg-gray-400";
+    if (rank === 3) return "bg-amber-600";
+    return "bg-muted";
+  };
 
   return (
     <div className="bg-white rounded-lg border border-border/50 overflow-hidden hover:shadow-md transition-shadow cursor-pointer">
@@ -109,8 +120,15 @@ function RankingCard({
         >
           {rank}
         </div>
-        <Image src="/public/office.png" alt={name} fill className="object-cover" />
-        <div className="absolute top-2 right-2 bg-white/90 px-2 py-1 rounded text-xs">ログインすると、</div>
+        <Image
+          src="/public/office.png"
+          alt={name}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute top-2 right-2 bg-white/90 px-2 py-1 rounded text-xs">
+          ログインすると、
+        </div>
       </div>
       <div className="p-3">
         <h3 className="font-bold text-sm text-foreground mb-1">{name}</h3>
@@ -129,19 +147,24 @@ function RankingCard({
               className={`h-3 w-3 ${i < Math.floor(rating) ? "text-yellow-400 fill-yellow-400" : "text-muted"}`}
             />
           ))}
-          <span className="text-xs text-muted-foreground ml-1">{rating.toFixed(1)}</span>
+          <span className="text-xs text-muted-foreground ml-1">
+            {rating.toFixed(1)}
+          </span>
         </div>
         <div className="mt-3 pt-3 border-t border-border/50">
           <Badge variant="outline" className="text-[10px] mr-1">
             給与制度
           </Badge>
           <div className="flex gap-1 mt-2">
-            <Badge variant="secondary" className="text-[10px] bg-primary/10 text-primary">
+            <Badge
+              variant="secondary"
+              className="text-[10px] bg-primary/10 text-primary"
+            >
               年収・給与を見る
             </Badge>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

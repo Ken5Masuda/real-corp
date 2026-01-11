@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -12,7 +12,9 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="text-white space-y-4">
             <p className="text-lg">行きたい企業の全てがわかる！</p>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">企業研究サイト</h1>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              企業研究サイト
+            </h1>
             <p className="text-2xl md:text-3xl font-bold">人気IT企業の〜〜〜</p>
           </div>
 
@@ -34,20 +36,44 @@ export function HeroSection() {
       <div className="bg-white/95 backdrop-blur">
         <div className="container mx-auto px-4 py-8">
           <div className="flex items-center gap-4 mb-6">
-            <h2 className="text-lg font-bold text-foreground">リアル企業分析では</h2>
-            <span className="text-sm text-muted-foreground">こんなことができます</span>
+            <h2 className="text-lg font-bold text-foreground">
+              リアル企業分析では
+            </h2>
+            <span className="text-sm text-muted-foreground">
+              こんなことができます
+            </span>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <FeatureItem icon="📊" title="給与・待遇データの" highlight="企業比較" sub="ができる" />
-            <FeatureItem icon="📈" title="各企業の" highlight="5年分の業績" sub="がわかる" />
-            <FeatureItem icon="🎬" title="各企業の" highlight="Q&A問題動画" sub="が見れる" />
-            <FeatureItem icon="📝" title="先輩就活生の" highlight="選考情報(ES・面接)" sub="が見れる" />
+            <FeatureItem
+              icon="📊"
+              title="給与・待遇データの"
+              highlight="企業比較"
+              sub="ができる"
+            />
+            <FeatureItem
+              icon="📈"
+              title="各企業の"
+              highlight="5年分の業績"
+              sub="がわかる"
+            />
+            <FeatureItem
+              icon="🎬"
+              title="各企業の"
+              highlight="Q&A問題動画"
+              sub="が見れる"
+            />
+            <FeatureItem
+              icon="📝"
+              title="先輩就活生の"
+              highlight="選考情報(ES・面接)"
+              sub="が見れる"
+            />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function FeatureItem({
@@ -56,10 +82,10 @@ function FeatureItem({
   highlight,
   sub,
 }: {
-  icon: string
-  title: string
-  highlight: string
-  sub: string
+  icon: string;
+  title: string;
+  highlight: string;
+  sub: string;
 }) {
   return (
     <div className="flex items-start gap-3 p-4 rounded-lg hover:bg-muted/50 transition-colors">
@@ -72,5 +98,5 @@ function FeatureItem({
         </p>
       </div>
     </div>
-  )
+  );
 }

@@ -6,9 +6,9 @@
 
 本プロジェクトでは[セマンティックバージョニング](https://semver.org/lang/ja/)を採用します。バージョン番号は `MAJOR.MINOR.PATCH` の形式です。
 
--   **MAJOR**: 後方互換性のない変更
--   **MINOR**: 後方互換性のある機能追加
--   **PATCH**: 後方互換性のあるバグ修正
+- **MAJOR**: 後方互換性のない変更
+- **MINOR**: 後方互換性のある機能追加
+- **PATCH**: 後方互換性のあるバグ修正
 
 バージョンの更新は、`package.json`の`version`フィールドを直接編集することで行います。
 
@@ -41,9 +41,11 @@ git checkout -b feat/my-awesome-feature
 ## [Unreleased]
 
 ### Added
+
 - 〇〇機能を追加
 
 ### Fixed
+
 - △△のバグを修正
 ```
 
@@ -80,6 +82,6 @@ git push origin v1.2.3
 
 **注意:** デプロイ設定で、以下の環境変数が正しく設定されていることを確認してください。
 
--   `NEXT_PUBLIC_SUPABASE_URL`
--   `NEXT_PUBLIC_SUPABASE_ANON_KEY`
--   `NEXT_PUBLIC_USE_MOCK_API=false`
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `NEXT_PUBLIC_USE_MOCK_API=false`

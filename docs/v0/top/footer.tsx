@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -6,11 +6,15 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <p className="text-xs text-muted-foreground mb-1">IT企業を目指す学生のための就職活動サイト</p>
+            <p className="text-xs text-muted-foreground mb-1">
+              IT企業を目指す学生のための就職活動サイト
+            </p>
             <Link href="/" className="text-xl font-bold text-foreground">
               リアル企業分析
             </Link>
-            <p className="text-xs text-muted-foreground mt-2">© 2025 xxxx All Rights Reserved.</p>
+            <p className="text-xs text-muted-foreground mt-2">
+              © 2025 xxxx All Rights Reserved.
+            </p>
           </div>
 
           <nav className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -39,5 +43,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

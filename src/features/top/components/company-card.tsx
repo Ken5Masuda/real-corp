@@ -1,10 +1,10 @@
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 
 interface CompanyCardProps {
-  name: string
-  growth: string
-  tags: string[]
+  name: string;
+  growth: string;
+  tags: string[];
 }
 
 export function CompanyCard({ name, growth, tags }: CompanyCardProps) {
@@ -15,7 +15,9 @@ export function CompanyCard({ name, growth, tags }: CompanyCardProps) {
       </div>
       <div className="p-3">
         <h3 className="font-bold text-sm text-foreground mb-1">{name}</h3>
-        <p className="text-xs text-muted-foreground mb-2 line-clamp-1">{growth}</p>
+        <p className="text-xs text-muted-foreground mb-2 line-clamp-1">
+          {growth}
+        </p>
         <div className="flex flex-wrap gap-1">
           {tags.map((tag, i) => (
             <Badge
@@ -29,5 +31,5 @@ export function CompanyCard({ name, growth, tags }: CompanyCardProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
