@@ -4,32 +4,54 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanyCard } from "./company-card";
+import { Company } from "@/features/company/types"; // Company型をインポート
 
-const companies = [
+const companies: Company[] = [
+  // Company型に合わせてデータを変更
   {
+    id: "intern-1",
     name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    slug: "alphasights",
+    description: "早期選考インターンを実施",
+    industry: "コンサルティング",
+    logo_url: "/office.png",
+    created_at: "2024-01-01T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "intern-2",
+    name: "BetaSolutions",
+    slug: "betasolutions",
+    description: "長期インターン募集中",
+    industry: "ITサービス",
+    logo_url: "/office.png",
+    created_at: "2024-01-02T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "intern-3",
+    name: "GammaTech",
+    slug: "gammatech",
+    description: "最新技術を学ぶ",
+    industry: "Web開発",
+    logo_url: "/office.png",
+    created_at: "2024-01-03T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "intern-4",
+    name: "Delta Innovations",
+    slug: "delta-innovations",
+    description: "新規事業開発インターン",
+    industry: "スタートアップ",
+    logo_url: "/office.png",
+    created_at: "2024-01-04T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "intern-5",
+    name: "Epsilon Corp",
+    slug: "epsilon-corp",
+    description: "AI開発プロジェクト",
+    industry: "AI",
+    logo_url: "/office.png",
+    created_at: "2024-01-05T00:00:00Z",
   },
 ];
 
@@ -76,8 +98,8 @@ export function InternSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-6">
-          {companies.map((company, i) => (
-            <CompanyCard key={i} {...company} />
+          {companies.map((company) => (
+            <CompanyCard key={company.id} company={company} /> // company propを渡す
           ))}
         </div>
 

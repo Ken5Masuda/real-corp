@@ -4,32 +4,54 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanyCard } from "./company-card";
+import { Company } from "@/features/company/types"; // Company型をインポート
 
-const companies = [
+const companies: Company[] = [
+  // Company型に合わせてデータを変更
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "pickup-1",
+    name: "ピックアップ企業A",
+    slug: "pickup-a",
+    description: "ピックアップ対象の注目企業です。",
+    industry: "Webサービス",
+    logo_url: "/office.png",
+    created_at: "2024-02-01T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "pickup-2",
+    name: "ピックアップ企業B",
+    slug: "pickup-b",
+    description: "急成長中のスタートアップ。",
+    industry: "AI",
+    logo_url: "/office.png",
+    created_at: "2024-02-02T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "pickup-3",
+    name: "ピックアップ企業C",
+    slug: "pickup-c",
+    description: "働きがいのある企業として選出。",
+    industry: "コンサルティング",
+    logo_url: "/office.png",
+    created_at: "2024-02-03T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "pickup-4",
+    name: "ピックアップ企業D",
+    slug: "pickup-d",
+    description: "最新技術を積極導入。",
+    industry: "製造業",
+    logo_url: "/office.png",
+    created_at: "2024-02-04T00:00:00Z",
   },
   {
-    name: "AlphaSights",
-    growth: "CAGR(年平均成長率): 70%...",
-    tags: ["面接あり", "面談あり", "お小りく"],
+    id: "pickup-5",
+    name: "ピックアップ企業E",
+    slug: "pickup-e",
+    description: "社会貢献度の高い事業を展開。",
+    industry: "教育",
+    logo_url: "/office.png",
+    created_at: "2024-02-05T00:00:00Z",
   },
 ];
 
@@ -71,8 +93,8 @@ export function PickupSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {companies.map((company, i) => (
-            <CompanyCard key={i} {...company} />
+          {companies.map((company) => (
+            <CompanyCard key={company.id} company={company} /> // company propを渡す
           ))}
         </div>
       </div>

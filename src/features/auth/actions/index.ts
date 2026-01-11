@@ -41,7 +41,7 @@ export async function signup(formData: FormData) {
       // 確認メール内のリンクをクリックした後のリダイレクト先
       emailRedirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/auth/callback`,
     },
-  })
+  });
   if (error) {
     console.error("Signup error:", error);
     return redirect("/login?message=Could not authenticate user");

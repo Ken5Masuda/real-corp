@@ -1,6 +1,7 @@
 import { getRankings } from "@/features/top/api/getRankings";
 import { Header } from "@/features/top/components/header";
 import { HeroSection } from "@/features/top/components/hero-section";
+import { CompanyListSection } from "@/features/company/components/CompanyListSection"; // Import CompanyListSection
 import { FeaturesSection } from "@/features/top/components/features-section";
 import { PickupSection } from "@/features/top/components/pickup-section";
 import { InternSection } from "@/features/top/components/intern-section";
@@ -18,6 +19,7 @@ export default async function Home() {
     <main className="min-h-screen bg-background">
       <Header />
       <HeroSection />
+      <CompanyListSection />
       <FeaturesSection />
       <PickupSection />
       <InternSection />
