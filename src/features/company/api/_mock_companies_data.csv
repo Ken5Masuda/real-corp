@@ -1,0 +1,4 @@
+id,name,slug,description,industry,logo_url,founded_year,employee_count,website_url,created_at
+company-1,リアクティブソリューションズ,reactive-solutions,高速なWebアプリケーション開発とコンサルティングを提供しています。モダンな技術スタックを駆使し、顧客のビジネス課題を解決します。,ソフトウェア開発,/office.png,2018,50,https://reactive.example.com,2024-01-20T10:00:00Z
+company-2,イノベーションラボ,innovation-lab,AIと機械学習を活用した次世代ソリューションの研究開発を行っています。データ駆動型のアプローチで社会に貢献します。,AI/機械学習,/office.png,2020,30,https://innovation.example.com,2024-01-18T14:30:00Z
+company-3,クラウドワークス,cloud-works,クラウドネイティブなインフラ構築と運用を専門としています。ScalableでResilientなシステムを設計・実装します。,クラウドインフラ,/office.png,2015,100,https://cloudworks.example.com,2024-01-15T09:00:00Z
