@@ -13,7 +13,7 @@ export function Footer() {
               リアル企業分析
             </Link>
             <p className="text-xs text-muted-foreground mt-2">
-              © 2025 xxxx All Rights Reserved.
+              © 2026 Lifedge Inc. All Rights Reserved.
             </p>
           </div>
 
@@ -33,8 +33,8 @@ export function Footer() {
           </nav>
 
           <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-            <Link href="/requirements" className="hover:text-foreground">
-              各種要件
+            <Link href="/faq" className="hover:text-foreground">
+              よくある質問
             </Link>
             <Link href="/privacy" className="hover:text-foreground">
               プライバシーポリシー
