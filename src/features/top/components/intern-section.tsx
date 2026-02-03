@@ -4,17 +4,15 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanyCard } from "./company-card";
-import { Company } from "@/features/company/types"; // Company型をインポート
+import { CompanyListItem } from "@/features/company/types";
 
-const companies: Company[] = [
-  // Company型に合わせてデータを変更
+const companies: CompanyListItem[] = [
   {
     id: "intern-1",
     name: "AlphaSights",
     slug: "alphasights",
     description: "早期選考インターンを実施",
     industry: "コンサルティング",
-    logo_url: "/office.png",
     created_at: "2024-01-01T00:00:00Z",
   },
   {
@@ -23,7 +21,6 @@ const companies: Company[] = [
     slug: "betasolutions",
     description: "長期インターン募集中",
     industry: "ITサービス",
-    logo_url: "/office.png",
     created_at: "2024-01-02T00:00:00Z",
   },
   {
@@ -32,7 +29,6 @@ const companies: Company[] = [
     slug: "gammatech",
     description: "最新技術を学ぶ",
     industry: "Web開発",
-    logo_url: "/office.png",
     created_at: "2024-01-03T00:00:00Z",
   },
   {
@@ -41,7 +37,6 @@ const companies: Company[] = [
     slug: "delta-innovations",
     description: "新規事業開発インターン",
     industry: "スタートアップ",
-    logo_url: "/office.png",
     created_at: "2024-01-04T00:00:00Z",
   },
   {
@@ -50,7 +45,6 @@ const companies: Company[] = [
     slug: "epsilon-corp",
     description: "AI開発プロジェクト",
     industry: "AI",
-    logo_url: "/office.png",
     created_at: "2024-01-05T00:00:00Z",
   },
 ];
@@ -99,7 +93,7 @@ export function InternSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-6">
           {companies.map((company) => (
-            <CompanyCard key={company.id} company={company} /> // company propを渡す
+            <CompanyCard key={company.id} company={company} />
           ))}
         </div>
 

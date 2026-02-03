@@ -4,17 +4,15 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanyCard } from "./company-card";
-import { Company } from "@/features/company/types"; // Company型をインポート
+import { CompanyListItem } from "@/features/company/types";
 
-const companies: Company[] = [
-  // Company型に合わせてデータを変更
+const companies: CompanyListItem[] = [
   {
     id: "pickup-1",
     name: "ピックアップ企業A",
     slug: "pickup-a",
     description: "ピックアップ対象の注目企業です。",
     industry: "Webサービス",
-    logo_url: "/office.png",
     created_at: "2024-02-01T00:00:00Z",
   },
   {
@@ -23,7 +21,6 @@ const companies: Company[] = [
     slug: "pickup-b",
     description: "急成長中のスタートアップ。",
     industry: "AI",
-    logo_url: "/office.png",
     created_at: "2024-02-02T00:00:00Z",
   },
   {
@@ -32,7 +29,6 @@ const companies: Company[] = [
     slug: "pickup-c",
     description: "働きがいのある企業として選出。",
     industry: "コンサルティング",
-    logo_url: "/office.png",
     created_at: "2024-02-03T00:00:00Z",
   },
   {
@@ -41,7 +37,6 @@ const companies: Company[] = [
     slug: "pickup-d",
     description: "最新技術を積極導入。",
     industry: "製造業",
-    logo_url: "/office.png",
     created_at: "2024-02-04T00:00:00Z",
   },
   {
@@ -50,7 +45,6 @@ const companies: Company[] = [
     slug: "pickup-e",
     description: "社会貢献度の高い事業を展開。",
     industry: "教育",
-    logo_url: "/office.png",
     created_at: "2024-02-05T00:00:00Z",
   },
 ];
@@ -94,7 +88,7 @@ export function PickupSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {companies.map((company) => (
-            <CompanyCard key={company.id} company={company} /> // company propを渡す
+            <CompanyCard key={company.id} company={company} />
           ))}
         </div>
       </div>

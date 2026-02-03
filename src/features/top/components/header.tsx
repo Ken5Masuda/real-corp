@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { logout } from "@/features/auth/actions";
+import { NavLinks } from "./nav-links";
 
 export async function Header() {
   const supabase = await createClient();
@@ -23,32 +24,7 @@ export async function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
-          <Link
-            href="/"
-            className="text-sm font-medium text-primary border-b-2 border-primary pb-1"
-          >
-            ホーム
-          </Link>
-          <Link
-            href="/search"
-            className="text-sm font-medium text-foreground hover:text-primary"
-          >
-            企業を探す
-          </Link>
-          <Link
-            href="/compare"
-            className="text-sm font-medium text-foreground hover:text-primary"
-          >
-            企業比較
-          </Link>
-          <Link
-            href="/es"
-            className="text-sm font-medium text-foreground hover:text-primary"
-          >
-            ES・体験記
-          </Link>
-        </nav>
+        <NavLinks />
 
         <div className="flex items-center gap-2">
           {user ? (

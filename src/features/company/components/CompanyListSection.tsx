@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CompanyCard } from "@/features/top/components/company-card"; // Reusing the existing card
-import { getAllCompanies } from "@/features/company/api/getCompanies";
+import { CompanyCard } from "@/features/top/components/company-card";
+import { getCompanyListItems } from "@/features/company/api/getCompanies";
 
 export async function CompanyListSection() {
-  const companies = await getAllCompanies();
+  const companies = await getCompanyListItems();
 
   return (
     <section className="py-12 bg-muted/30">
@@ -25,7 +25,7 @@ export async function CompanyListSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {companies.map((company) => (
+          {companies.slice(0, 10).map((company) => (
             <CompanyCard key={company.id} company={company} />
           ))}
         </div>
